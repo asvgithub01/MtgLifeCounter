@@ -5,10 +5,7 @@
     android:layout_height="match_parent"
     android:background="#0099cc"
     android:orientation="vertical"
-
     tools:context=".FullscreenActivity">
-
-
     <com.factory.asv.mtglifecounter.CounterCtrl
         android:background="#0088ee"
         android:layout_height="match_parent"
@@ -16,16 +13,14 @@
         android:layout_weight="1"
         asv:CtrlScheme="bbv"
         asv:CtrlValue="20"/>
-
     <com.factory.asv.mtglifecounter.CounterCtrl
         android:background="#cccccc"
-        android:layout_height="match_parent"
+        android:layout_height="120dp"
         android:layout_width="match_parent"
-        android:layout_weight="1.02"
+
         asv:CtrlScheme="bvb"
         asv:CtrlValue="0"
          />
-
     <com.factory.asv.mtglifecounter.CounterCtrl
         android:layout_height="match_parent"
         android:layout_width="match_parent"
