@@ -7,21 +7,31 @@
     android:orientation="vertical"
     tools:context=".FullscreenActivity">
     <com.factory.asv.mtglifecounter.CounterCtrl
+        android:id="@+id/CtrlUp"
         android:background="#0088ee"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="1"
         asv:CtrlScheme="bbv"
         asv:CtrlValue="20"/>
-    <com.factory.asv.mtglifecounter.CounterCtrl
-        android:background="#cccccc"
-        android:layout_height="120dp"
-        android:layout_width="match_parent"
 
-        asv:CtrlScheme="bvb"
-        asv:CtrlValue="0"
-         />
+    <Button
+        android:id="@+id/BtnReset"
+        android:text="reset"
+        android:layout_height="120dp"
+        android:layout_width="match_parent" />
+
+
+    <!--<com.factory.asv.mtglifecounter.CounterCtrl-->
+        <!--android:background="#cccccc"-->
+        <!--android:layout_height="120dp"-->
+        <!--android:layout_width="match_parent"-->
+
+        <!--asv:CtrlScheme="bvb"-->
+        <!--asv:CtrlValue="0"-->
+         <!--/>-->
     <com.factory.asv.mtglifecounter.CounterCtrl
+       android:id="@+id/CtrlDown"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:layout_weight="1"

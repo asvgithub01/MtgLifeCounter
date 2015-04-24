@@ -2,6 +2,8 @@ package com.factory.asv.mtglifecounter;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +22,8 @@ public class CounterCtrl extends LinearLayout {
     int mCounterInit = 20;
     int mCounterCurrent;
     int mResScheme;
+    Runnable ColorResetRun;
+    Handler titiritero;
 
     public CounterCtrl(Context context, int maximun) {
         super(context);
@@ -80,6 +84,16 @@ public class CounterCtrl extends LinearLayout {
             mCounterCurrent = mCounterInit;
             //Asociamos los eventos necesarios
             setControlEvents();
+
+            titiritero = new Handler();
+            ColorResetRun = new Runnable() {
+                @Override
+                public void run() {
+                    btnPlus.setBackgroundColor(Color.TRANSPARENT);
+                    btnMinus.setBackgroundColor(Color.TRANSPARENT);
+
+                }
+            };
         } catch (Exception e) {
             logg.printE(e);
         }
@@ -95,15 +109,19 @@ public class CounterCtrl extends LinearLayout {
             btnPlus.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    btnPlus.setBackgroundColor(Color.parseColor("#66000000"));
                     mCounterCurrent = mCounterCurrent + 1;
                     lblTotal.setText("" + mCounterCurrent);
+                    titiritero.postDelayed(ColorResetRun,200);
                 }
             });
             btnMinus.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                   btnMinus.setBackgroundColor(Color.parseColor("#66000000"));
                     mCounterCurrent = mCounterCurrent - 1;
                     lblTotal.setText("" + mCounterCurrent);
+                    titiritero.postDelayed(ColorResetRun,200);
                 }
             });
 
